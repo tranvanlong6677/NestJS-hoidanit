@@ -17,11 +17,14 @@ export class UsersController {
 
   @Post()
   create(
-    @Body('email') email: string,
-    @Body('password') password: string,
-    @Body('name') name: string,
+    // @Body('email') email: string,
+    // @Body('password') password: string,
+    // @Body('name') name: string,
+    @Body()
+    createUserDto: CreateUserDto,
   ) {
-    return this.usersService.create(email, password, name);
+    console.log('check create user data', createUserDto);
+    return this.usersService.create(createUserDto);
   }
 
   @Get()
