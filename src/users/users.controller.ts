@@ -23,7 +23,6 @@ export class UsersController {
     @Body()
     createUserDto: CreateUserDto,
   ) {
-    console.log('check create user data', createUserDto);
     return this.usersService.create(createUserDto);
   }
 
@@ -34,7 +33,7 @@ export class UsersController {
 
   @Get(':id')
   findOne(@Param('id') id: string) {
-    return this.usersService.findOne(+id);
+    return this.usersService.findOne(id);
   }
 
   @Patch(':id')
